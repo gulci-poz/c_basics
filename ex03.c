@@ -1,22 +1,27 @@
 #include <stdio.h>
 
-/* print Celsius-Fahrenheit table for fahr = 0, 20, ..., 300 */
-/* floating point version */
+// konwersja stopni Celsjusza do Fahrenheita
 
-main()
+int main()
 {
     float fahr, celsius;
     int lower, upper, step;
 
-    lower = 0;      /* lower limit of temperature table */
-    upper = 40;    /* upper limit */
-    step = 2;      /* step size */
+    lower = 0;
+    upper = 40;
+    step = 2;
 
     celsius = lower;
-    printf("Celsius Fahrenheit table\n");
+
+    printf("Konwersja stopni Celsjusza do Fahrenheita\n");
+
     while(celsius <= upper) {
-        fahr = 9.0 / 5.0 * celsius + 32.0;
+        fahr = 32 + celsius * 9 / 5;
         printf("%3.0f %6.1f\n", celsius, fahr);
         celsius = celsius + step;
     }
+
+    getchar();
+
+    return 0;
 }
